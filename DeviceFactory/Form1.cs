@@ -34,7 +34,11 @@ namespace DeviceFactory
                     var phone = worker.MakeDevice(builder, name_TextBox.Text, screen_TextBox.Text, model_TextBox.Text, body_TextBox.Text);
                     UpdateLabel(phone, label1);
                     break;
-             
+                case "Laptop":
+                    builder = new LaptopBuilder(new Laptop());
+                    var laptop = worker.MakeDevice(builder, name_TextBox.Text, screen_TextBox.Text, model_TextBox.Text, body_TextBox.Text);
+                    UpdateLabel(laptop, label1);
+                    break;
             }
   
         }
@@ -50,7 +54,7 @@ namespace DeviceFactory
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DeviceStorage.Instance.MakeRepost());
+            MessageBox.Show(DeviceStorage.Instance.MakeRepost().ToString());
         }
     }
 }
